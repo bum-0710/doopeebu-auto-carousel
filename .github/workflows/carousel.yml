@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       dry_run:
-        description: 'Dry run (피그마에 실제 생성 안 함)'
+        description: 'Dry run'
         required: false
         default: 'false'
         type: choice
@@ -28,10 +28,17 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
 
       - name: 📦 패키지 설치
         run: npm install
+
+      - name: 📁 src 폴더 구성
+        run: |
+          mkdir -p src
+          mv index.js src/ 2>/dev/null || true
+          mv solar-terms.js src/ 2>/dev/null || true
+          mv content-generator.js src/ 2>/dev/null || true
+          mv figma-builder.js src/ 2>/dev/null || true
 
       - name: 🌿 캐러셀 자동 생성
         env:
