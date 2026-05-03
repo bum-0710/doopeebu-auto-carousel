@@ -31,7 +31,7 @@ jobs:
           cache: 'npm'
 
       - name: 📦 패키지 설치
-        run: npm ci
+        run: npm install
 
       - name: 🌿 캐러셀 자동 생성
         env:
