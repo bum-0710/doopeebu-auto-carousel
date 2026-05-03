@@ -1,0 +1,15 @@
+{
+  "name": "doopeebu-auto-carousel",
+  "version": "1.0.0",
+  "description": "두피부 브랜드 인스타그램 캐러셀 자동 생성기 — 절기 기반, 매주 월·수 자동 실행",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "node src/index.js --dry-run"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.24.0",
+    "dotenv": "^16.4.5",
+    "node-fetch": "^3.3.2"
+  }
+}
